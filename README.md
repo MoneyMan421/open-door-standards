@@ -31,7 +31,7 @@ The standards support one working stack, in five layers:
 
 | Standard | What it defines | Status |
 |---|---|---|
-| Proof Record | The common record emitted by every checker, gate, scan and grade: subject, method, measurements, verdict, evidence and limits. | **v0.2 — in this repo** (`schemas/proof-record.schema.json`) |
+| Proof Record | The common record emitted by every checker, gate, scan and grade: subject, method, measurements, verdict, evidence and limits. | **v0.3 — in this repo** (`schemas/proof-record.schema.json`) |
 | Task Signature | The contract for one task: requester, goal, allowed tools, data scope, limits, expiry and success test. | Planned |
 | Gate Policy | How tool actions are allowed, denied or escalated to a human, and how removals are recorded. | Planned |
 | Drift Suite | How a baseline is pinned for a model, tool, skill or workflow, and how a re-run reports exactly what moved. | Planned |
@@ -42,7 +42,7 @@ Every product that implements one of these standards references this
 repository and the standard's version. Formats live here so they can
 never quietly drift apart between products.
 
-## The Proof Record (v0.2)
+## The Proof Record (v0.3)
 
 The Proof Record is the seed standard: the one record shape every
 tool in the stack emits.
@@ -65,6 +65,10 @@ tool in the stack emits.
   identifier of the version record for the issuing system's state at
   write time. Version records are records like any other, so the
   exact state in force at any moment can be reconstructed.
+- A record may carry its **risk context** (`risk_level`): the
+  assessed risk of the subject or operation, in the issuing
+  standard's own scale, sealed inside the record body so the
+  assessment travels with the verdict it governed.
 - A record is **a measurement record, not a warranty.** It states
   what was measured, by what method, on what date — nothing about
   the future.
@@ -105,7 +109,7 @@ names the exact standard version it was issued under.
 
 ## Status
 
-Seed published November 26, 2026; the Proof Record is at v0.2 (see
+Seed published November 26, 2026; the Proof Record is at v0.3 (see
 CHANGELOG.md). The Proof Record schema is
 the first standard in the repo; the remaining standards land here as
 their products reach the point of needing a shared format — the

@@ -7,6 +7,17 @@ existing verdicts; PATCH is wording only.
 
 ## Proof Record
 
+### v0.3.0 — 2026-11-27
+
+MINOR (additive; no existing verdicts change).
+
+- Added the optional `risk_level` field: the assessed risk level of
+  the subject or operation at issue time, in the issuing standard's
+  own scale, sealed inside the record body so the assessment travels
+  with the verdict it governed. Source of the principle: the S5
+  (Risk Level Encoding) seal in the CHIN / TESO architecture paper,
+  Sovereign Archive Rank 2.
+
 ### v0.2.0 — 2026-11-26
 
 MINOR (additive; no existing verdicts change).
